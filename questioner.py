@@ -1,7 +1,8 @@
 import random
+from sigfigs import f
 
 def generateQuestions():
-  questions = []
+  questions = {}
   i = 5
   while i > 0:
     value1 = random.randint(1,500)
@@ -9,17 +10,21 @@ def generateQuestions():
     solvalue = random.randint(1,3)
     #1: velocity (m/s), 2: distance (m), 3: time (s)
     if solvalue == 1:
-      questions.append("If distance is " + str(value1) + "m and time is " + str(value2) + " seconds, what is the velocity?")
+      if value1 > value2 or random.randint(1,5) == 1:
+        questions["q" + str(i)] = "If distance is " + str(value1) + "m and time is " + str(value2) + " seconds, what is the velocity?"
+        questions["a" + str(i)] = f(float(value1) / float(value2), 3)
+      else:
+        questions["q" + str(i)] = "If distance is " + str(value2) + "m and time is " + str(value1) + " seconds, what is the velocity?"
+        questions["a" + str(i)] = f(float(value2) / float(value1), 3)
+      questions["u" + str(i)] = "m/s"
     elif solvalue == 2:
-      questions.append("If velocity is " + str(value1) + "m/s and time is " + str(value2) + " seconds, what is the distance?")
+      questions["q" + str(i)] = "If velocity is " + str(value1) + " m/s and time is " + str(value2) + " seconds, what is the distance?"
+      questions["a" + str(i)] = value1 * value2
+      questions["u" + str(i)] = "m"
     elif solvalue == 3:
-      questions.append("If velocity is " + str(value1) + "m/s and distance is " + str(value2) + "m, what is the time?")
+      questions["q" + str(i)] = "If velocity is " + str(value1) + " m/s and distance is " + str(value2) + "m, what is the time?"
+      questions["a" + str(i)] = value1 * value2
+      questions["u" + str(i)] = "seconds"
     i = i - 1
-  endqs = {
-    "q1": questions[0],
-    "q2": questions[1],
-    "q3": questions[2],
-    "q4": questions[3],
-    "q5": questions[4]
-  }
-  return endqs
+  print(questions)
+  return questions
