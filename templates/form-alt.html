@@ -6,7 +6,7 @@
     <div class="mdl-layout__header-row">
       <span class="mdl-layout-title">Equator</span>
       <div class="mdl-layout-spacer"></div>
-      <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" onClick="location.href='https://github.com/whizzer0/equator'" id="btngithub">
+      <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" onClick="window.open('https://github.com/whizzer0/equator','_blank');" id="btngithub">
         <i class="mdi mdi-github-circle"></i>
       </button>
       <div class="mdl-tooltip" for="btngithub">Source code on GitHub</div>
@@ -21,7 +21,7 @@
       <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
         <form action="/results" method="POST">
           <div class="mdl-card__supporting-text">
-          {{questions.q1}}<br />
+            {{questions.q1}}<br />
             <div class="mdl-textfield mdl-js-textfield">
               <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question1" id="question1">
               <label class="mdl-textfield__label" for="question1">Answer</label>
@@ -30,7 +30,7 @@
             {{questions.u1}}
           </div>
           <div class="mdl-card__supporting-text">
-          {{questions.q2}}<br />
+            {{questions.q2}}<br />
             <div class="mdl-textfield mdl-js-textfield">
               <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question2" id="question2">
               <label class="mdl-textfield__label" for="question2">Answer</label>
@@ -39,7 +39,7 @@
             {{questions.u2}}
           </div>
           <div class="mdl-card__supporting-text">
-          {{questions.q3}}<br />
+            {{questions.q3}}<br />
             <div class="mdl-textfield mdl-js-textfield">
               <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question3" id="question3">
               <label class="mdl-textfield__label" for="question3">Answer</label>
@@ -48,7 +48,7 @@
             {{questions.u3}}
           </div>
           <div class="mdl-card__supporting-text">
-          {{questions.q4}}<br />
+            {{questions.q4}}<br />
             <div class="mdl-textfield mdl-js-textfield">
               <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question4" id="question4">
               <label class="mdl-textfield__label" for="question4">Answer</label>
@@ -57,7 +57,7 @@
             {{questions.u4}}
           </div>
           <div class="mdl-card__supporting-text">
-          {{questions.q5}}<br />
+            {{questions.q5}}<br />
             <div class="mdl-textfield mdl-js-textfield">
               <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question5" id="question5">
               <label class="mdl-textfield__label" for="question5">Answer</label>
@@ -70,9 +70,6 @@
               Submit
             </button>
           </div>
-  <!--        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" type="submit">
-            <i class="material-icons">search</i>
-          </button> -->
         </form>
       </div>
       <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--4-col">

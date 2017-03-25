@@ -28,3 +28,28 @@ def generateQuestions():
     i = i - 1
   #print(questions)
   return questions
+
+def processResults(questions, q1, q2, q3, q4, q5):
+  corrects = {}
+  if f(q1,3) == questions["a1"]:
+    corrects["q1"] = True
+  else:
+    corrects["q1"] = False
+  if f(q1,3) == questions["a2"]:
+    corrects["q2"] = True
+  else:
+    corrects["q2"] = False
+  if f(q1,3) == questions["a3"]:
+    corrects["q3"] = True
+  else:
+    corrects["q3"] = False
+  if f(q1,3) == questions["a4"]:
+    corrects["q4"] = True
+  else:
+    corrects["q4"] = False
+  if f(q1,3) == questions["a5"]:
+    corrects["q5"] = True
+  else:
+    corrects["q5"] = False
+  print(corrects)
+  return(corrects)
