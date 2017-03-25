@@ -19,12 +19,12 @@ def generateQuestions():
       questions["u" + str(i)] = "m/s"
     elif solvalue == 2:
       questions["q" + str(i)] = "If velocity is " + str(value1) + " m/s and time is " + str(value2) + " seconds, what is the distance?"
-      questions["a" + str(i)] = value1 * value2
+      questions["a" + str(i)] = f(value1 * value2, 3)
       questions["u" + str(i)] = "m"
     elif solvalue == 3:
       questions["q" + str(i)] = "If velocity is " + str(value1) + " m/s and distance is " + str(value2) + "m, what is the time?"
-      questions["a" + str(i)] = value1 * value2
+      questions["a" + str(i)] = f(value1 * value2, 3)
       questions["u" + str(i)] = "seconds"
     i = i - 1
-  print(questions)
+  #print(questions)
   return questions
