@@ -9,7 +9,7 @@ Equator uses:
 
 ## Running Equator
 
-Enter the directory with the files from this repository. Then, use the command `python app.py` and head to [http://127.0.0.1:5000](http://127.0.0.1:5000) in a browser. Equator should run fine in both Python 2 and Python 3, and should also work offline as MDL is included (you may need to install a local copy of [Roboto](https://fonts.google.com/specimen/Roboto)).
+Enter the directory with the files from this repository. Then, use the command `python app.py` and head to [127.0.0.1:5000](http://127.0.0.1:5000) in a browser. Equator should run fine in both Python 2 and Python 3, and should also work offline as MDL is included (you may need to install a local copy of [Roboto](https://fonts.google.com/specimen/Roboto)).
 
 ## Progress
 
@@ -27,4 +27,5 @@ Currently working on making Equator able to:
 
 * Use multiple equations
 * Allow the user to select an area of the syllabus from which to test equations
-* Support a customisable number of questions (currently 5 is hardcoded)
+* Support a customisable number of questions (the question marker is now modular but the results page still has 5 hardcoded)
+* Use an improved method for generating questions that doesn't result in lots of huge numbers
