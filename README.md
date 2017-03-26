@@ -15,7 +15,7 @@ Enter the directory with the files from this repository. Then, use the command `
 
 Equator is very much a WIP, but you can use it. Currently, Equator can:
 
-* Generate and offer questions involving two formulae (this is extensible and you can add more yourself if you can work out how)
+* Generate and offer questions involving three formulae (this is extensible and you can add more yourself if you can work out how)
 * Accept user input for these questions
 * Mark these questions correct/incorrect and offer the correct answer when wrong
 * Offer a percentage score for the user's results

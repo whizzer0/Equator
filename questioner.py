@@ -1,9 +1,9 @@
 import random
 from sigfigs import f
 
-eqs = ["dvt", "Fma"]
-form = {"dvt1":"distance", "dvt2":"velocity", "dvt3":"time", "Fma1":"force", "Fma2":"mass", "Fma3":"acceleration"}
-unit = {"dvt1":"m", "dvt2":" m/s", "dvt3":" seconds", "Fma1":"N", "Fma2":"kg", "Fma3":" m/s²"}
+eqs = ["dvt", "Fma", "mmv"]
+form = {"dvt1":"distance", "dvt2":"velocity", "dvt3":"time", "Fma1":"force", "Fma2":"mass", "Fma3":"acceleration", "mmv1":"momentum", "mmv2":"mass", "mmv3":"velocity"}
+unit = {"dvt1":"m", "dvt2":" m/s", "dvt3":" seconds", "Fma1":"N", "Fma2":"kg", "Fma3":" m/s²", "mmv1":"kg m/s", "mmv2":"kg", "mmv3":" m/s"}
 
 def generateQuestions():
   questions = {}
@@ -34,8 +34,11 @@ def generateQuestions():
 
 def processResults(questions, results):
   corrects = {}
+  print(results)
   i = 5
   while i > 0:
+    if results[i-1] == "":
+      results[i-1] = 0
     if f(results[i-1],3) == questions["a"+str(i)]:
       corrects["q"+str(i)] = True
       corrects["s"+str(i)] = "✓"
