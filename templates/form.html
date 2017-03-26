@@ -1,6 +1,12 @@
 {% extends "layout-md.html" %}
 {% block content %}
 
+<style>
+.card-separator {
+  height: 16px;
+}
+</style>
+
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
@@ -10,73 +16,93 @@
         <i class="mdi mdi-github-circle"></i>
       </button>
       <div class="mdl-tooltip" for="btngithub">View source on GitHub</div>
-      <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" onClick="location.reload();" id="btnrefresh">
-        <i class="material-icons">refresh</i>
-      </button>
-      <div class="mdl-tooltip" for="btnrefresh">Refresh</div>
     </div>
   </header>
   <main class="mdl-layout__content">
     <div class="mdl-grid">
-      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
-        <form action="/results" method="POST">
-          <div class="mdl-card__supporting-text">
-            {{questions.q1}}<br />
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question1" id="question1">
-              <label class="mdl-textfield__label" for="question1">Answer</label>
-              <span class="mdl-textfield__error">Please enter a number.</span>
-            </div>
-            {{questions.u1}}
-          </div>
-          <div class="mdl-card__supporting-text">
-            {{questions.q2}}<br />
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question2" id="question2">
-              <label class="mdl-textfield__label" for="question2">Answer</label>
-              <span class="mdl-textfield__error">Please enter a number.</span>
-            </div>
-            {{questions.u2}}
-          </div>
-          <div class="mdl-card__supporting-text">
-            {{questions.q3}}<br />
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question3" id="question3">
-              <label class="mdl-textfield__label" for="question3">Answer</label>
-              <span class="mdl-textfield__error">Please enter a number.</span>
-            </div>
-            {{questions.u3}}
-          </div>
-          <div class="mdl-card__supporting-text">
-            {{questions.q4}}<br />
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question4" id="question4">
-              <label class="mdl-textfield__label" for="question4">Answer</label>
-              <span class="mdl-textfield__error">Please enter a number.</span>
-            </div>
-            {{questions.u4}}
-          </div>
-          <div class="mdl-card__supporting-text">
-            {{questions.q5}}<br />
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question5" id="question5">
-              <label class="mdl-textfield__label" for="question5">Answer</label>
-              <span class="mdl-textfield__error">Please enter a number.</span>
-            </div>
-            {{questions.u5}}
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit">
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
-      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--4-col">
+      <form action="/results" method="POST" class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">Questions</h2>
+        </div>
         <div class="mdl-card__supporting-text">
-          Equator is a tool which will test your knowledge of important equations.<br />
-          Answer these questions as best you can.<br />
-          You only need to answer to three significant figures, but longer answers will be rounded, so don't worry.</div>
+          {{questions.q1}}<br />
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question1" id="question1">
+            <label class="mdl-textfield__label" for="question1">Answer</label>
+            <span class="mdl-textfield__error">Please enter a number.</span>
+          </div>
+          {{questions.u1}}
+        </div>
+        <div class="mdl-card__supporting-text">
+          {{questions.q2}}<br />
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question2" id="question2">
+            <label class="mdl-textfield__label" for="question2">Answer</label>
+            <span class="mdl-textfield__error">Please enter a number.</span>
+          </div>
+          {{questions.u2}}
+        </div>
+        <div class="mdl-card__supporting-text">
+          {{questions.q3}}<br />
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question3" id="question3">
+            <label class="mdl-textfield__label" for="question3">Answer</label>
+            <span class="mdl-textfield__error">Please enter a number.</span>
+          </div>
+          {{questions.u3}}
+        </div>
+        <div class="mdl-card__supporting-text">
+          {{questions.q4}}<br />
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question4" id="question4">
+            <label class="mdl-textfield__label" for="question4">Answer</label>
+            <span class="mdl-textfield__error">Please enter a number.</span>
+          </div>
+          {{questions.u4}}
+        </div>
+        <div class="mdl-card__supporting-text">
+          {{questions.q5}}<br />
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="question5" id="question5">
+            <label class="mdl-textfield__label" for="question5">Answer</label>
+            <span class="mdl-textfield__error">Please enter a number.</span>
+          </div>
+          {{questions.u5}}
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit">
+            Submit
+          </button>
+        </div>
+      </form>
+      <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-card mdl-shadow--4dp">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Configuration</h2>
+          </div>
+          <div class="mdl-card__menu">
+            <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" onClick="location.reload();" id="btnrefresh">
+              <i class="material-icons">refresh</i>
+            </button>
+            <div class="mdl-tooltip" for="btnrefresh">Refresh questions</div>
+          </div>
+        </div>
+        <div class="card-separator mdl-cell--1-col"></div>
+        <div class="mdl-card mdl-shadow--4dp">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Info & updates</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            Equator is a tool which will test your knowledge of important equations.<br />
+            Answer these questions as best you can.<br />
+            You only need to answer to three significant figures, but longer answers will be rounded, so don't worry.
+          </div>
+          <div class="mdl-card__supporting-text">
+            <strong>1.0 (2017-03-26)</strong><br />
+            - Initial release<br />
+            - Section selection and customisable number of questions will be added in the next release
+          </div>
+        </div>
       </div>
     </div>
   </main>

@@ -13,9 +13,9 @@ Enter the directory with the files from this repository. Then, use the command `
 
 ## Progress
 
-Equator is very much a WIP and isn't really usable yet. Currently, Equator can:
+Equator is very much a WIP, but you can use it. Currently, Equator can:
 
-* Generate and offer questions involving the formula velocity = distance ÷ time (this is now extensible, but additional formulae have not been added yet)
+* Generate and offer questions involving two formulae (this is extensible and you can add more yourself if you can work out how)
 * Accept user input for these questions
 * Mark these questions correct/incorrect and offer the correct answer when wrong
 * Offer a percentage score for the user's results
