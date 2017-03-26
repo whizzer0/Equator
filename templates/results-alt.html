@@ -19,7 +19,7 @@
               <input class="mdl-textfield__input" type="text" name="question1" id="question1" disabled>
               <label class="mdl-textfield__label" for="question1">{{results[0]}}{{questions.u1}}</label>
           </div>
-          <span style="color: {{marked.c1}}">{{marked.s1}}</span>
+          <span style="color: {{marked.c1}}">{{marked.s1}} {{marked.a1}}</span>
         </div>
         <div class="mdl-card__supporting-text">
           {{questions.q2}}<br />
@@ -27,7 +27,7 @@
               <input class="mdl-textfield__input" type="text" name="question2" id="question2" disabled>
               <label class="mdl-textfield__label" for="question2">{{results[1]}}{{questions.u2}}</label>
           </div>
-          <span style="color: {{marked.c2}}">{{marked.s2}}</span>
+          <span style="color: {{marked.c2}}">{{marked.s2}} {{marked.a2}}</span>
         </div>
         <div class="mdl-card__supporting-text">
           {{questions.q3}}<br />
@@ -35,7 +35,7 @@
               <input class="mdl-textfield__input" type="text" name="question3" id="question3" disabled>
               <label class="mdl-textfield__label" for="question3">{{results[2]}}{{questions.u3}}</label>
           </div>
-          <span style="color: {{marked.c3}}">{{marked.s3}}</span>
+          <span style="color: {{marked.c3}}">{{marked.s3}} {{marked.a3}}</span>
         </div>
         <div class="mdl-card__supporting-text">
           {{questions.q4}}<br />
@@ -43,7 +43,7 @@
               <input class="mdl-textfield__input" type="text" name="question4" id="question4" disabled>
               <label class="mdl-textfield__label" for="question4">{{results[3]}}{{questions.u4}}</label>
           </div>
-          <span style="color: {{marked.c4}}">{{marked.s4}}</span>
+          <span style="color: {{marked.c4}}">{{marked.s4}} {{marked.a4}}</span>
         </div>
         <div class="mdl-card__supporting-text">
           {{questions.q5}}<br />
@@ -51,19 +51,15 @@
               <input class="mdl-textfield__input" type="text" name="question5" id="question5" disabled>
               <label class="mdl-textfield__label" for="question1">{{results[4]}}{{questions.u5}}</label>
           </div>
-          <span style="color: {{marked.c5}}">{{marked.s5}}</span>
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-          <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit">
-            Submit
-          </button>
+          <span style="color: {{marked.c5}}">{{marked.s5}} {{marked.a5}}</span>
         </div>
       </div>
       <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--4-col">
         <div class="mdl-card__supporting-text">
-          Equator is a tool which will test your knowledge of important equations.<br />
-          Answer these questions as best you can.<br />
-          You only need to answer to three significant figures.</div>
+          <h1>{{[marked["q1"], marked["q2"], marked["q3"], marked["q4"], marked["q5"]].count(True) / 5 * 100}}%</h1>
+          Remember:<br />
+          velocity = distance ÷ time
+        </div>
       </div>
     </div>
   </main>

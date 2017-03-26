@@ -7,18 +7,24 @@ Equator uses:
 * [Material Design Lite](https://github.com/google/material-design-lite)
 * [Material Design Icons](https://github.com/Templarian/MaterialDesign)
 
+## Running Equator
+
+Enter the directory with the files from this repository. Then, use the command `python app.py` and head to [http://127.0.0.1:5000](http://127.0.0.1:5000) in a browser. Equator should run fine in both Python 2 and Python 3, and should also work offline as MDL is included (you may need to install a local copy of [Roboto](https://fonts.google.com/specimen/Roboto)).
+
 ## Progress
 
 Equator is very much a WIP and isn't really usable yet. Currently, Equator can:
 
 * Generate and offer questions involving the formula velocity = distance ÷ time
-* Accept user input for these questions and mark them correct/incorrect
+* Accept user input for these questions
+* Mark these questions correct/incorrect and offer the correct answer when wrong
+* Offer a percentage score for the user's results
 * Look fancy (drop shadows make everything better)
 
 ## Soon™
 
 Currently working on making Equator able to:
 
-* Show the correct answer to the questions when you get them wrong
 * Use multiple equations
 * Allow the user to select an area of the syllabus from which to test equations
+* Support a customisable number of questions (currently 5 is hardcoded)

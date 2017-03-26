@@ -35,41 +35,51 @@ def processResults(questions, q1, q2, q3, q4, q5):
     corrects["q1"] = True
     corrects["s1"] = "✓"
     corrects["c1"] = "#4CAF50"
+    corrects["a1"] = ""
   else:
     corrects["q1"] = False
     corrects["s1"] = "✗"
     corrects["c1"] = "#F44336"
-  if f(q1,3) == questions["a2"]:
+    corrects["a1"] = questions["a1"] + questions["u1"]
+  if f(q2,3) == questions["a2"]:
     corrects["q2"] = True
     corrects["s2"] = "✓"
     corrects["c2"] = "#4CAF50"
+    corrects["a2"] = ""
   else:
     corrects["q2"] = False
     corrects["s2"] = "✗"
     corrects["c2"] = "#F44336"
-  if f(q1,3) == questions["a3"]:
+    corrects["a2"] = questions["a2"] + questions["u2"]
+  if f(q3,3) == questions["a3"]:
     corrects["q3"] = True
     corrects["s3"] = "✓"
     corrects["c3"] = "#4CAF50"
+    corrects["a3"] = ""
   else:
     corrects["q3"] = False
     corrects["s3"] = "✗"
     corrects["c3"] = "#F44336"
-  if f(q1,3) == questions["a4"]:
+    corrects["a3"] = questions["a3"] + questions["u3"]
+  if f(q4,3) == questions["a4"]:
     corrects["q4"] = True
     corrects["s4"] = "✓"
     corrects["c4"] = "#4CAF50"
+    corrects["a4"] = ""
   else:
     corrects["q4"] = False
     corrects["s4"] = "✗"
     corrects["c4"] = "#F44336"
-  if f(q1,3) == questions["a5"]:
+    corrects["a4"] = questions["a4"] + questions["u4"]
+  if f(q5,3) == questions["a5"]:
     corrects["q5"] = True
     corrects["s5"] = "✓"
     corrects["c5"] = "#4CAF50"
+    corrects["a5"] = ""
   else:
     corrects["q5"] = False
     corrects["s5"] = "✗"
     corrects["c5"] = "#F44336"
-  print(corrects)
+    corrects["a5"] = questions["a5"] + questions["u5"]
+  #print([corrects["q1"], corrects["q2"], corrects["q3"], corrects["q4"], corrects["q5"]].count(True))
   return(corrects)
