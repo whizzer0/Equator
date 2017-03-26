@@ -9,7 +9,9 @@ Equator uses:
 
 ## Running Equator
 
-Enter the directory with the files from this repository. Then, use the command `python app.py` and head to [127.0.0.1:5000](http://127.0.0.1:5000) in a browser. Equator should run fine in both Python 2 and Python 3, and should also work offline as MDL is included (you may need to install a local copy of [Roboto](https://fonts.google.com/specimen/Roboto)).
+You can access an online version of Equator at http://whizzer0.pythonanywhere.com. This will use the current stable release.
+
+If you want to run your own version of Equator, clone or download this repo. Then, use the command `python app.py` and head to [127.0.0.1:5000](http://127.0.0.1:5000) in a browser (obviously, if you're setting it up to be hosted, you'll use something else). Equator should run fine in both Python 2 and Python 3, and should also work offline as MDL is included (you may need to install a local copy of [Roboto](https://fonts.google.com/specimen/Roboto)).
 
 ## Progress
 
