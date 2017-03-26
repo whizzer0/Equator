@@ -15,7 +15,7 @@ Enter the directory with the files from this repository. Then, use the command `
 
 Equator is very much a WIP and isn't really usable yet. Currently, Equator can:
 
-* Generate and offer questions involving the formula velocity = distance ÷ time
+* Generate and offer questions involving the formula velocity = distance ÷ time (this is now extensible, but additional formulae have not been added yet)
 * Accept user input for these questions
 * Mark these questions correct/incorrect and offer the correct answer when wrong
 * Offer a percentage score for the user's results
@@ -25,7 +25,6 @@ Equator is very much a WIP and isn't really usable yet. Currently, Equator can:
 
 Currently working on making Equator able to:
 
-* Use multiple equations
 * Allow the user to select an area of the syllabus from which to test equations
-* Support a customisable number of questions (the question marker is now modular but the results page still has 5 hardcoded)
+* Support a customisable number of questions (the question marker is now extensible but the results page still has 5 hardcoded)
 * Use an improved method for generating questions that doesn't result in lots of huge numbers
