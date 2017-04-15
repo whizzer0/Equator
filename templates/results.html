@@ -1,69 +1,88 @@
-{% extends "layout-md.html" %}
-{% block content %}
-
-<div class="mdl-layout">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" onClick="window.history.go(-1);" id="btnback">
-        <i class="material-icons">arrow_back</i>
-      </button>
-      <div class="mdl-layout-title">Results</span>
+<html>
+	<head>
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-cyan.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css" />
+    <!--<link rel="stylesheet" href="static/css/material.min.css">
+    <script src="static/js/material.min.js"></script>
+    <link rel="stylesheet" href="static/css/styles-md.css">-->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="static/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equator</title>
+    <style>
+      body {
+        background-color: #F5F5F5;
+      }
+    </style>
+	</head>
+	
+	<body>
+    <div class="mdl-layout">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" onClick="window.history.go(-1);" id="btnback">
+            <i class="material-icons">arrow_back</i>
+          </button>
+          <div class="mdl-layout-title">Results</span>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="mdl-grid">
+          <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
+            <div class="mdl-card__supporting-text">
+              {{questions.q1}}<br />
+              <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" name="question1" id="question1" disabled>
+                  <label class="mdl-textfield__label" for="question1">{{results[0]}}{{questions.u1}}</label>
+              </div>
+              <span style="color: {{marked.c1}}">{{marked.s1}} {{marked.a1}}</span>
+            </div>
+            <div class="mdl-card__supporting-text">
+              {{questions.q2}}<br />
+              <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" name="question2" id="question2" disabled>
+                  <label class="mdl-textfield__label" for="question2">{{results[1]}}{{questions.u2}}</label>
+              </div>
+              <span style="color: {{marked.c2}}">{{marked.s2}} {{marked.a2}}</span>
+            </div>
+            <div class="mdl-card__supporting-text">
+              {{questions.q3}}<br />
+              <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" name="question3" id="question3" disabled>
+                  <label class="mdl-textfield__label" for="question3">{{results[2]}}{{questions.u3}}</label>
+              </div>
+              <span style="color: {{marked.c3}}">{{marked.s3}} {{marked.a3}}</span>
+            </div>
+            <div class="mdl-card__supporting-text">
+              {{questions.q4}}<br />
+              <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" name="question4" id="question4" disabled>
+                  <label class="mdl-textfield__label" for="question4">{{results[3]}}{{questions.u4}}</label>
+              </div>
+              <span style="color: {{marked.c4}}">{{marked.s4}} {{marked.a4}}</span>
+            </div>
+            <div class="mdl-card__supporting-text">
+              {{questions.q5}}<br />
+              <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" name="question5" id="question5" disabled>
+                  <label class="mdl-textfield__label" for="question1">{{results[4]}}{{questions.u5}}</label>
+              </div>
+              <span style="color: {{marked.c5}}">{{marked.s5}} {{marked.a5}}</span>
+            </div>
+          </div>
+          <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--4-col">
+            <div class="mdl-card__supporting-text">
+              <h1>{{[marked["q1"], marked["q2"], marked["q3"], marked["q4"], marked["q5"]].count(True) / 5 * 100}}%</h1>
+              Remember:<br />
+              velocity = distance ÷ time<br />
+              force = mass × acceleration<br />
+              momentum = mass × velocity<br />
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
-  </header>
-  <main class="mdl-layout__content">
-    <div class="mdl-grid">
-      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--8-col">
-        <div class="mdl-card__supporting-text">
-          {{questions.q1}}<br />
-          <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" name="question1" id="question1" disabled>
-              <label class="mdl-textfield__label" for="question1">{{results[0]}}{{questions.u1}}</label>
-          </div>
-          <span style="color: {{marked.c1}}">{{marked.s1}} {{marked.a1}}</span>
-        </div>
-        <div class="mdl-card__supporting-text">
-          {{questions.q2}}<br />
-          <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" name="question2" id="question2" disabled>
-              <label class="mdl-textfield__label" for="question2">{{results[1]}}{{questions.u2}}</label>
-          </div>
-          <span style="color: {{marked.c2}}">{{marked.s2}} {{marked.a2}}</span>
-        </div>
-        <div class="mdl-card__supporting-text">
-          {{questions.q3}}<br />
-          <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" name="question3" id="question3" disabled>
-              <label class="mdl-textfield__label" for="question3">{{results[2]}}{{questions.u3}}</label>
-          </div>
-          <span style="color: {{marked.c3}}">{{marked.s3}} {{marked.a3}}</span>
-        </div>
-        <div class="mdl-card__supporting-text">
-          {{questions.q4}}<br />
-          <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" name="question4" id="question4" disabled>
-              <label class="mdl-textfield__label" for="question4">{{results[3]}}{{questions.u4}}</label>
-          </div>
-          <span style="color: {{marked.c4}}">{{marked.s4}} {{marked.a4}}</span>
-        </div>
-        <div class="mdl-card__supporting-text">
-          {{questions.q5}}<br />
-          <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" name="question5" id="question5" disabled>
-              <label class="mdl-textfield__label" for="question1">{{results[4]}}{{questions.u5}}</label>
-          </div>
-          <span style="color: {{marked.c5}}">{{marked.s5}} {{marked.a5}}</span>
-        </div>
-      </div>
-      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--4-col">
-        <div class="mdl-card__supporting-text">
-          <h1>{{[marked["q1"], marked["q2"], marked["q3"], marked["q4"], marked["q5"]].count(True) / 5 * 100}}%</h1>
-          Remember:<br />
-          velocity = distance ÷ time<br />
-          force = mass × acceleration<br />
-          momentum = mass × velocity<br />
-        </div>
-      </div>
-    </div>
-  </main>
-</div>
-{% endblock %}
+  </body>
+</html>
